@@ -1,0 +1,61 @@
+\documentclass{school}
+\usepackage{minted}
+\usemintedstyle{rainbow_dash}
+
+\title{Wordpress}
+\subject{INSY - Webentwicklung}
+\author{Markus Reichl}
+
+\newacronym{ac-cms}{CMS}{Content Management System}
+
+\begin{document}
+\maketitle
+\thispagestyle{fancy}	% Makes the first page fancy too
+
+\tableofcontents
+
+\section{Aufgabe}
+Es soll ein Webauftritt für ein Diplomprojekt mittels Wordpress, inklusive Präsentation des Projektes und mehreren Postings uber den Projektfortschritt gestaltet werden.
+Relevant hier weniger der Inhalt sondern vielmehr, sondern die Umsetzung. Speziell:
+\begin{outline}
+\1 Das Design baut auf Bootstrap (oder auch einem anderen CSS Framework)
+\1 Es soll ein eigenes Wordpress-Theme, zur Darstellung der Inhalte aus den Posts auf Basis einer Vorlage gestaltet werden.
+\1 Es soll ein eigenes Wordpress-Plugin entwickelt und hinzugefügt werden.
+\1 Inhalte sollen mit speziellen Posts und eigenen Feldern eingebaut werden.
+\end{outline}
+
+\newpage
+\section{Installation}
+Wordpress\cite{wp} kann über die Seite\cite{wp-dl} des \gls{ac-cms} heruntergeladen und nach der beiliegenden Anleitung\cite{wp-help} installiert werden.
+\\\\
+In diesem Fall wurde Wordpress, zusammen mit einer MySQL\cite{mysql} Datenbank und den zugehörigen Abhängigkeiten über den Virtualisierungsdienst Docker\cite{docker} installiert.
+
+Die Konfiguration, sowie die Steuerung wird dabei über Docker Compose\cite{docker-compose} vorgenommen, wobei die \texttt{docker-compose.yml} wie folgt definiert wurde.
+
+\inputminted{yaml}{docker-compose.yml}
+
+Der Container kann dabei über \texttt{docker-compose up -d} gestartet und mittels \texttt{docker-compose down} heruntergefahren werden.
+
+\section{}
+
+% Basic Figure
+% \begin{figure}[h]
+%	 \centering
+% 	 \includegraphics[height=4cm]{image.jpg}
+% 	 \caption{Caption}
+% \end{figure
+
+\newpage
+% Basic bibiography
+\begin{thebibliography}{9}
+\bibitem{wp} Wordpress. Blog Tool, Publishing Platform, and CMS \\ https://wordpress.org
+\bibitem{wp-dl} Wordpress. Download WordPress \\ https://wordpress.org/latest.zip
+\bibitem{wp-help} Wordpress. Installing WordPress \\ https://codex.wordpress.org/Installing\_WordPress
+\bibitem{docker} Docker. Build, Ship and Run Any App, Anywhere \\ https://www.docker.com
+\bibitem{docker-compose} Docker. Docker Compose | Docker Documentation \\ https://docs.docker.com/compose/
+\bibitem{mysql} MySQL \\ https://www.mysql.com/
+\end{thebibliography}
+
+% List of figures
+% \listoffigures
+\end{document}

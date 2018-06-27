@@ -9,7 +9,7 @@ services:
     environment:
       WORDPRESS_DB_PASSWORD: insywp
     volumes:
-      - './var/www:/var/www'
+      - './var/www/html:/var/www/html'
     container_name: insy-wordpress
 
   mysql:
